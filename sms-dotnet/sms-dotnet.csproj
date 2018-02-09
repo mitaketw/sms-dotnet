@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <RootNamespace>SMS.Mitake</RootNamespace>
+    <AssemblyName>SMS.Mitake</AssemblyName>
+    <Authors>John Shu</Authors>
+    <Company />
+    <Product>SMS SDK of Mitake</Product>
+    <Description />
+    <PackageProjectUrl>https://github.com/mitaketw/sms-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mitaketw/sms-dotnet</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>SMS</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UnicornToolkit" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>
