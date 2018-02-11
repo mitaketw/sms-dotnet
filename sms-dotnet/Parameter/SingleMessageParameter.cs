@@ -17,7 +17,7 @@ namespace SMS.Mitake
         [HttpProperty("vldtime", HttpPropertyFor.GET, typeof(ValidDurationServiceParameterConverter))]
         public TimeSpan? ValidDuration { get; set; }
 
-        [HttpProperty("smbody", HttpPropertyFor.GET, typeof(UTF8ToBig5ServiceParameterConverter))]
+        [HttpProperty("smbody", HttpPropertyFor.GET)]
         public string Body { get; set; }
 
         [HttpProperty("response", HttpPropertyFor.GET)]

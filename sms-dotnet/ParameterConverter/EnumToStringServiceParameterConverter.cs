@@ -9,12 +9,7 @@ namespace SMS.Mitake
     {
         public string Convert(object value)
         {
-            if (value is MessageSendStaus messageSendStatus)
-            {
-                return messageSendStatus.ToString();
-            }
-
-            return string.Empty;
+            return value.ToString();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SMS.Mitake
     {
         protected override string CreateRequestUri(SingleMessageParameter parameter)
         {
-            return "https://smexpress.mitake.com.tw/SmSendGet.asp";
+            return "http://smexpress.mitake.com.tw/SmSendGet.asp";
         }
     }
 }

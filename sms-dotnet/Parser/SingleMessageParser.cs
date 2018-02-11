@@ -19,7 +19,7 @@ namespace SMS.Mitake
             }
 
             var contentStream = await source.Content.ReadAsStreamAsync();
-            using (var sr = new StreamReader(contentStream, true))
+            using (var sr = new StreamReader(contentStream, Encoding.ASCII))
             {
                 var result = MessageSendResultParseHelper.Parse(sr);
                 var messageResult = result.FirstOrDefault();
@@ -46,12 +46,8 @@ namespace SMS.Mitake
 
                 if (line.StartsWith("[", StringComparison.CurrentCultureIgnoreCase))
                 {
-                    if (messageSendResult != null)
-                    {
-                        result.Add(messageSendResult);
-                    }
-
                     messageSendResult = new MessageSendResult();
+                    result.Add(messageSendResult);
                     continue;
                 }
 
