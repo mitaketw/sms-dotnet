@@ -11,13 +11,13 @@ namespace SMS.Mitake
         [HttpProperty("DestName", HttpPropertyFor.GET)]
         public string DestinationName { get; set; }
 
-        [HttpProperty("dlvtime", HttpPropertyFor.GET)]
+        [HttpProperty("dlvtime", HttpPropertyFor.GET, typeof(DateTimeServiceParameterConverter))]
         public DateTime? DesiredDeliverTime { get; set; }
 
         [HttpProperty("vldtime", HttpPropertyFor.GET, typeof(ValidDurationServiceParameterConverter))]
-        public TimeSpan ValidDuration { get; set; }
+        public TimeSpan? ValidDuration { get; set; }
 
-        [HttpProperty("smbody", HttpPropertyFor.GET)]
+        [HttpProperty("smbody", HttpPropertyFor.GET, typeof(UTF8ToBig5ServiceParameterConverter))]
         public string Body { get; set; }
 
         [HttpProperty("response", HttpPropertyFor.GET)]

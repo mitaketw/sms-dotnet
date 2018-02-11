@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,18 @@ namespace SMS.Mitake
             }
 
             var contentStream = await source.Content.ReadAsStreamAsync();
-            var sr = new StreamReader(contentStream, true);
-            
-        }
+            using (var sr = new StreamReader(contentStream, true))
+            {
+                var result = MessageSendResultParseHelper.Parse(sr);
+                var messageResult = result.FirstOrDefault();
+                if (messageResult == null)
+                {
+                    return new ParseResult<MessageSendResult>(new ParseError("wrong content"));
+                }
 
+                return new ParseResult<MessageSendResult>(messageResult);
+            }
+        }
     }
 
     public static class MessageSendResultParseHelper

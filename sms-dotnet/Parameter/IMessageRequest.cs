@@ -26,7 +26,7 @@ namespace SMS.Mitake
         /// <para>簡訊有效期限。格式為YYYY-MM-DD HH:NN:SS或YYYYMMDDHHNNSS，或是整數值代表傳送後幾秒後內有效。</para>
         /// <para>請勿超過大哥大業者預設之24小時期限，以避免業者不回覆簡訊狀態。</para>
         /// </summary>
-        TimeSpan ValidDuration { get; set; }
+        TimeSpan? ValidDuration { get; set; }
 
         /// <summary>
         /// <para>簡訊內容。必須為BIG-5編碼，長度70個中文字或是160個英數字。若有換行的需求，請填入ASCII Code 6代表換行。為避免訊息中有&電文分隔符號，請將此欄位進行url encode。</para>

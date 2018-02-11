@@ -11,17 +11,18 @@ namespace SMS.Mitake
 
         public string Convert(object value)
         {
-            if (value is TimeSpan duration)
+            var duration = value as TimeSpan?;
+            if (duration.HasValue == false)
             {
-                if (duration.TotalHours >= maxValidHours)
-                {
-                    duration = TimeSpan.FromHours(maxValidHours);
-                }
-
-                return DateTime.Now.Add(duration).ToString("yyyyMMddHHmmss");
+                return DateTime.Now.Add(TimeSpan.FromHours(maxValidHours)).ToString("yyyyMMddHHmmss");
+            }
+            
+            if (duration.Value.TotalHours >= maxValidHours)
+            {
+                duration = TimeSpan.FromHours(maxValidHours);
             }
 
-            return DateTime.Now.Add(TimeSpan.FromHours(maxValidHours)).ToString("yyyyMMddHHmmss");
+            return DateTime.Now.Add(duration.Value).ToString("yyyyMMddHHmmss");
         }
     }
 }
