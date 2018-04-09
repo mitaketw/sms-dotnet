@@ -3,7 +3,7 @@ using Unicorn.ServiceModel;
 
 namespace SMS.Mitake
 {
-    public class SingleMessageParameter : MessageParameter, IRequestMessage
+    public class SingleMessageParameter : MessageParameter, ISMSMessage
     {
         [HttpProperty("dstaddr", HttpPropertyFor.GET)]
         public string DestinationPhoneNumber { get; set; }

@@ -7,15 +7,18 @@
     <Authors>John Shu</Authors>
     <Company />
     <Product>SMS SDK of Mitake</Product>
-    <Description />
+    <Description>This is .NET SDK for Mitake(Taiwan) SMS service. (non-offcial)</Description>
     <PackageProjectUrl>https://github.com/mitaketw/sms-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mitaketw/sms-dotnet</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>SMS</PackageTags>
+    <PackageReleaseNotes>support single and multi send SMS</PackageReleaseNotes>
+    <Version>1.0.0-alpha</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="UnicornToolkit" Version="2.0.1" />
+    <PackageReference Include="UnicornToolkit" Version="2.0.2" />
   </ItemGroup>
 
 </Project>
