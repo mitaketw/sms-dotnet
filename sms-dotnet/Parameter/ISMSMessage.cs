@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SMS.Mitake
 {
-    public interface IRequestMessage
+    public interface ISMSMessage
     {
         /// <summary>
         /// 受訊方手機號碼。請填入09帶頭的手機號碼。
