@@ -58,7 +58,7 @@ namespace SMS.Mitake
             return result;
         }
 
-        private static MessageSendStaus ParseStatus(string source)
+        public static MessageSendStaus ParseStatus(string source)
         {
             MessageSendStaus result = MessageSendStaus.Success;
 
